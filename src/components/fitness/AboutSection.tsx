@@ -49,19 +49,19 @@ const FeatureCard = memo(({ feature, index }: FeatureCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: 0.3 }}
-    transition={{ duration: 0.6, delay: index * 0.1 }}
+    viewport={{ amount: 0.3 }}
+    transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
     className="group relative"
   >
     {/* Glow Effect */}
-    <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-blue-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
     {/* Card */}
-    <div className="relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-red-500/50 transition-all duration-300">
+    <div className="relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-yellow-500/50 transition-all duration-300">
       {/* Icon Container with Pulse Ring */}
       <div className="mb-6 relative flex items-center gap-4">
         <div className="relative">
-          <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-500 rounded-xl flex items-center justify-center shadow-lg shadow-red-500/50 group-hover:shadow-red-500/70 transition-all duration-300 group-hover:scale-110 relative z-10">
+          <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-yellow-500/50 group-hover:shadow-yellow-500/70 transition-all duration-300 group-hover:scale-110 relative z-10">
             <feature.icon className="w-8 h-8 text-white" />
           </div>
           {/* Pulse Ring Animation - Lazy loaded */}
@@ -74,7 +74,7 @@ const FeatureCard = memo(({ feature, index }: FeatureCardProps) => (
       </div>
 
       {/* Content */}
-      <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-red-500 transition-colors duration-300">
+      <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-yellow-500 transition-colors duration-300">
         {feature.title}
       </h3>
       <p className="text-gray-400 leading-relaxed">
@@ -83,10 +83,10 @@ const FeatureCard = memo(({ feature, index }: FeatureCardProps) => (
 
       {/* Animated Line */}
       <motion.div
-        className="mt-4 h-1 bg-gradient-to-r from-red-600 to-orange-500 rounded-full"
+        className="mt-4 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
+        viewport={{ amount: 0.3 }}
         transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
         style={{ transformOrigin: 'left' }}
       />
@@ -102,7 +102,7 @@ function AboutSection() {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at center, #ff3131 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle at center, #fbbf24 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }} />
       </div>
@@ -112,19 +112,19 @@ function AboutSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          <div className="inline-block px-4 py-2 bg-red-600/10 border border-red-600/20 rounded-full mb-6">
-            <span className="text-red-500 text-sm font-bold tracking-wider">ABOUT US</span>
+          <div className="inline-block px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full mb-6">
+            <span className="text-yellow-500 text-sm font-bold tracking-wider">ABOUT US</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-black mb-6">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               WHERE CHAMPIONS
             </span>
             <br />
-            <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
               ARE MADE
             </span>
           </h2>
@@ -145,11 +145,11 @@ function AboutSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
           className="mt-20 relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-transparent to-blue-600/10 rounded-3xl blur-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 via-transparent to-amber-500/10 rounded-3xl blur-2xl" />
           <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-12 md:p-16">
             <div className="max-w-4xl mx-auto text-center">
               <h3 className="text-3xl md:text-4xl font-black mb-6 text-white">
@@ -161,10 +161,10 @@ function AboutSection() {
                 that transformation begins with a single rep, a single step, a single decision to be better.
               </p>
               <motion.div
-                className="h-1 w-32 bg-gradient-to-r from-red-600 to-orange-500 mx-auto rounded-full"
+                className="h-1 w-32 bg-gradient-to-r from-yellow-500 to-orange-500 mx-auto rounded-full"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
+                viewport={{ amount: 0.3 }}
                 transition={{ duration: 1 }}
               />
             </div>

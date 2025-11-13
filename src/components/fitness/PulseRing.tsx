@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 export default function PulseRing({ color = "red", delay = 0 }) {
   const colors = {
-    red: "bg-red-500",
-    blue: "bg-blue-500",
+    red: "bg-yellow-500",
+    blue: "bg-amber-500",
     orange: "bg-orange-500",
     green: "bg-green-500"
   };

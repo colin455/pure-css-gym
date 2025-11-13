@@ -53,8 +53,8 @@ const GalleryItem = memo(({ image, index, hoveredIndex, setHoveredIndex }: Galle
   <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
     whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true, amount: 0.3 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
+    viewport={{ amount: 0.3 }}
+    transition={{ duration: 0.8, delay: index * 0.12, ease: "easeOut" }}
     onMouseEnter={() => setHoveredIndex(index)}
     onMouseLeave={() => setHoveredIndex(null)}
     className="relative group cursor-pointer overflow-hidden rounded-2xl aspect-[4/3]"
@@ -69,11 +69,11 @@ const GalleryItem = memo(({ image, index, hoveredIndex, setHoveredIndex }: Galle
     {/* Gradient Overlay */}
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
 
-    {/* Red Glow Effect */}
+    {/* Gold Glow Effect */}
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
-      className="absolute inset-0 bg-gradient-to-br from-red-600/30 to-transparent"
+      className="absolute inset-0 bg-gradient-to-br from-yellow-500/30 to-transparent"
     />
 
     {/* Content */}
@@ -86,7 +86,7 @@ const GalleryItem = memo(({ image, index, hoveredIndex, setHoveredIndex }: Galle
         }}
         transition={{ duration: 0.3 }}
       >
-        <span className="inline-block px-3 py-1 bg-red-600/80 backdrop-blur-sm rounded-full text-xs font-bold text-white mb-3">
+        <span className="inline-block px-3 py-1 bg-yellow-500/80 backdrop-blur-sm rounded-full text-xs font-bold text-white mb-3">
           {image.category}
         </span>
       </motion.div>
@@ -99,12 +99,12 @@ const GalleryItem = memo(({ image, index, hoveredIndex, setHoveredIndex }: Galle
         initial={{ scaleX: 0 }}
         animate={{ scaleX: hoveredIndex === index ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-        className="h-1 bg-gradient-to-r from-red-600 to-orange-500 rounded-full origin-left"
+        className="h-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full origin-left"
       />
     </div>
 
     {/* Border Glow on Hover */}
-    <div className="absolute inset-0 border-2 border-transparent group-hover:border-red-500/50 rounded-2xl transition-colors duration-300" />
+    <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-500/50 rounded-2xl transition-colors duration-300" />
   </motion.div>
 ));
 
@@ -118,8 +118,8 @@ function GallerySection() {
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(to right, #ff3131 1px, transparent 1px),
-                           linear-gradient(to bottom, #ff3131 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, #fbbf24 1px, transparent 1px),
+                           linear-gradient(to bottom, #fbbf24 1px, transparent 1px)`,
           backgroundSize: '100px 100px',
           opacity: 0.03
         }} />
@@ -130,19 +130,19 @@ function GallerySection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          <div className="inline-block px-4 py-2 bg-red-600/10 border border-red-600/20 rounded-full mb-6">
-            <span className="text-red-500 text-sm font-bold tracking-wider">GALLERY</span>
+          <div className="inline-block px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full mb-6">
+            <span className="text-yellow-500 text-sm font-bold tracking-wider">GALLERY</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-black mb-6">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               EXPERIENCE
             </span>
             <br />
-            <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
               FITNESS WORLD
             </span>
           </h2>
@@ -168,13 +168,13 @@ function GallerySection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
           className="text-center mt-16"
         >
           <p className="text-2xl font-light text-gray-300">
             Step into a space where{' '}
-            <span className="font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
+            <span className="font-bold bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
               dedication meets excellence
             </span>
           </p>

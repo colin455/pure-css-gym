@@ -22,7 +22,7 @@ export default function AnimatedDumbbell({ className = "w-24 h-24" }) {
             ease: "easeInOut"
           }}
         />
-
+        
         {/* Left Bar */}
         <motion.rect
           x="40"
@@ -39,7 +39,7 @@ export default function AnimatedDumbbell({ className = "w-24 h-24" }) {
             ease: "easeInOut"
           }}
         />
-
+        
         {/* Center Bar */}
         <motion.rect
           x="60"
@@ -57,7 +57,7 @@ export default function AnimatedDumbbell({ className = "w-24 h-24" }) {
             ease: "easeInOut"
           }}
         />
-
+        
         {/* Right Bar */}
         <motion.rect
           x="140"
@@ -75,7 +75,7 @@ export default function AnimatedDumbbell({ className = "w-24 h-24" }) {
             delay: 0.1
           }}
         />
-
+        
         {/* Right Weight */}
         <motion.rect
           x="160"
@@ -93,7 +93,7 @@ export default function AnimatedDumbbell({ className = "w-24 h-24" }) {
             ease: "easeInOut"
           }}
         />
-
+        
         {/* Gradients */}
         <defs>
           <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -102,20 +102,6 @@ export default function AnimatedDumbbell({ className = "w-24 h-24" }) {
           </linearGradient>
         </defs>
       </svg>
-
-      {/* Glow Effect */}
-      <motion.div
-        className="absolute inset-0 bg-yellow-500 rounded-full blur-xl opacity-30"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
     </div>
   );
 }

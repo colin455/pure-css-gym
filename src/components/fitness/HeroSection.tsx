@@ -108,8 +108,9 @@ function HeroSection() {
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
           className="mb-6"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8">
@@ -124,12 +125,8 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-6xl md:text-8xl font-black mb-6 tracking-tight"
         >
-          <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-            UNLEASH YOUR
-          </span>
-          <br />
           <span className="bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500 bg-clip-text text-transparent">
-            POWER
+            FITNESS WORLD
           </span>
         </motion.h1>
 
