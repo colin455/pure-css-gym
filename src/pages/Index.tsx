@@ -4,15 +4,14 @@ import logo from "@/assets/logo.png";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background font-poppins">
+    <div className="min-h-screen bg-background font-poppins relative">
       {/* Navigation */}
-      <nav className="flex flex-col items-center px-8 lg:px-16 py-6 gap-4">
-        <div className="flex items-center gap-3">
+      <nav className="flex items-center justify-between px-8 lg:px-16 py-6">
+        <div className="flex items-center">
           <img src={logo} alt="Fitness World Logo" className="w-16 h-16 lg:w-20 lg:h-20" />
-          <span className="text-foreground font-bold text-xl lg:text-2xl">FITNESS WORLD</span>
         </div>
         
-        <ul className="hidden md:flex items-center gap-8 text-foreground font-medium">
+        <ul className="hidden md:flex items-center gap-8 text-foreground font-medium absolute left-1/2 -translate-x-1/2">
           <li className="hover:text-primary transition-colors cursor-pointer">About</li>
           <li className="hover:text-primary transition-colors cursor-pointer">Equipment</li>
           <li className="hover:text-primary transition-colors cursor-pointer">Team</li>
