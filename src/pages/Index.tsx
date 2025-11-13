@@ -6,10 +6,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-poppins">
       {/* Navigation */}
-      <nav className="flex items-center justify-between px-8 lg:px-16 py-6">
+      <nav className="flex flex-col items-center px-8 lg:px-16 py-6 gap-4">
         <div className="flex items-center gap-3">
           <img src={logo} alt="Fitness World Logo" className="w-16 h-16 lg:w-20 lg:h-20" />
-          <span className="text-foreground font-bold text-xl lg:text-2xl hidden sm:inline">FITNESS WORLD</span>
+          <span className="text-foreground font-bold text-xl lg:text-2xl">FITNESS WORLD</span>
         </div>
         
         <ul className="hidden md:flex items-center gap-8 text-foreground font-medium">
