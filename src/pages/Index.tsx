@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Facebook, Instagram, Twitter, Youtube, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-fitness.jpg";
 import logo from "@/assets/logo.png";
 import aboutGym1 from "@/assets/about-gym-1.jpg";
@@ -22,16 +23,17 @@ const Index = () => {
         </div>
         
         <ul className="hidden md:flex items-center gap-8 text-foreground font-medium absolute left-1/2 -translate-x-1/2">
-          <li className="hover:text-primary transition-colors cursor-pointer">About</li>
-          <li className="hover:text-primary transition-colors cursor-pointer">Equipment</li>
-          <li className="hover:text-primary transition-colors cursor-pointer">Team</li>
-          <li className="hover:text-primary transition-colors cursor-pointer">Locate us</li>
-          <li className="hover:text-primary transition-colors cursor-pointer">Contact us</li>
+          <li><a href="#hero" className="hover:text-primary transition-colors cursor-pointer">Home</a></li>
+          <li><a href="#about" className="hover:text-primary transition-colors cursor-pointer">About</a></li>
+          <li><a href="#equipment" className="hover:text-primary transition-colors cursor-pointer">Equipment</a></li>
+          <li><a href="#team" className="hover:text-primary transition-colors cursor-pointer">Team</a></li>
+          <li><a href="#locate-us" className="hover:text-primary transition-colors cursor-pointer">Locate us</a></li>
+          <li><a href="#contact-us" className="hover:text-primary transition-colors cursor-pointer">Contact us</a></li>
         </ul>
       </nav>
 
       {/* Hero Section */}
-      <main className="flex flex-col lg:flex-row items-center justify-between px-8 lg:px-16 py-12 lg:py-20 gap-8 lg:gap-0">
+      <main id="hero" className="flex flex-col lg:flex-row items-center justify-between px-8 lg:px-16 py-12 lg:py-20 gap-8 lg:gap-0">
         {/* Left Content */}
         <div className="flex-1 space-y-6 lg:space-y-8">
           <div>
@@ -50,6 +52,7 @@ const Index = () => {
           <Button 
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg px-8 py-6 rounded-full transition-all hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)]"
+            onClick={() => document.getElementById('contact-us')?.scrollIntoView({ behavior: 'smooth' })}
           >
             JOIN NOW
           </Button>
@@ -77,7 +80,7 @@ const Index = () => {
       </main>
 
       {/* About Section */}
-      <section className="bg-[#0D0D0D] px-8 lg:px-16 py-16 lg:py-24">
+      <section id="about" className="bg-[#0D0D0D] px-8 lg:px-16 py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left Content */}
           <div className="flex-1 space-y-6">
@@ -90,6 +93,7 @@ const Index = () => {
             <Button 
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-black text-lg px-12 py-6 rounded-full uppercase"
+              onClick={() => document.getElementById('contact-us')?.scrollIntoView({ behavior: 'smooth' })}
             >
               START TODAY
             </Button>
@@ -117,7 +121,7 @@ const Index = () => {
       </section>
 
       {/* Equipment Section */}
-      <section className="bg-background px-8 lg:px-16 py-16 lg:py-24">
+      <section id="equipment" className="bg-background px-8 lg:px-16 py-16 lg:py-24">
         <h2 className="text-4xl lg:text-6xl font-black text-foreground uppercase text-center mb-12">
           OUR EQUIPMENT
         </h2>
@@ -156,7 +160,7 @@ const Index = () => {
       </section>
 
       {/* Team Section */}
-      <section className="bg-[#0D0D0D] px-8 lg:px-16 py-16 lg:py-24">
+      <section id="team" className="bg-[#0D0D0D] px-8 lg:px-16 py-16 lg:py-24">
         <h2 className="text-4xl lg:text-6xl font-black text-foreground uppercase text-center mb-12">
           MEET OUR TEAM
         </h2>
@@ -166,6 +170,89 @@ const Index = () => {
             alt="Professional fitness trainers team photo" 
             className="w-full max-w-5xl h-auto object-cover rounded-lg"
           />
+        </div>
+      </section>
+
+      {/* Locate Us Section */}
+      <section id="locate-us" className="bg-background px-8 lg:px-16 py-16 lg:py-24">
+        <h2 className="text-4xl lg:text-6xl font-black text-foreground uppercase text-center mb-6">
+          LOCATE US
+        </h2>
+        <p className="text-lg lg:text-xl text-foreground text-center italic font-light mb-12 max-w-2xl mx-auto">
+          "Find us easily and start your fitness journey today."
+        </p>
+        <div className="max-w-5xl mx-auto">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.5304307398424!2d-79.3871!3d43.6426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM4JzMzLjQiTiA3OcKwMjMnMTMuNiJX!5e0!3m2!1sen!2sca!4v00000000000"
+            width="100%"
+            height="400"
+            style={{ border: 0, borderRadius: '12px' }}
+            allowFullScreen
+            loading="lazy"
+            title="Fitness World Location"
+          />
+        </div>
+      </section>
+
+      {/* Contact Us Section */}
+      <section id="contact-us" className="bg-[#0D0D0D] px-8 lg:px-16 py-16 lg:py-24">
+        <h2 className="text-4xl lg:text-6xl font-black text-foreground uppercase text-center mb-6">
+          CONTACT US
+        </h2>
+        <p className="text-lg lg:text-xl text-foreground text-center italic font-light mb-12 max-w-3xl mx-auto">
+          "Have questions or want to get started? Reach out to us anytime — we'd love to hear from you!"
+        </p>
+        
+        <div className="flex justify-center gap-6 mb-12">
+          <a 
+            href="https://facebook.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <Facebook className="w-6 h-6 text-background" />
+          </a>
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <Instagram className="w-6 h-6 text-background" />
+          </a>
+          <a 
+            href="https://twitter.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <Twitter className="w-6 h-6 text-background" />
+          </a>
+          <a 
+            href="https://youtube.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <Youtube className="w-6 h-6 text-background" />
+          </a>
+          <a 
+            href="https://wa.me/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <MessageCircle className="w-6 h-6 text-background" />
+          </a>
+        </div>
+
+        <div className="flex justify-center">
+          <Button 
+            size="lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-black text-lg px-12 py-6 rounded-full uppercase"
+          >
+            MESSAGE US NOW
+          </Button>
         </div>
       </section>
     </div>
